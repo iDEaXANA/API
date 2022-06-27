@@ -18,15 +18,11 @@ async function fetchObject(url, payload) { //this returns a javascript object
 
 async function getUser(){
     const numberOf = document.getElementById("number").value
-    
     let users = await fetchObject(`https://randomuser.me/api/?results=${numberOf}`)
-    //"https://randomuser.me/api/?results=5" EXAMPLE 
     
+    // document.getElementById("tile").value = "";
+    tilesContainer.innerHTML = ""
 
-    // var tile = document.createElement("div");
-    // tile.className = "tile";
-    // document.getElementById("tilesContainer").appendChild(tile);
-    
 for(let i=0; i<users.results.length; i++){
     
     let tile = document.createElement("div");
@@ -54,7 +50,7 @@ for(let i=0; i<users.results.length; i++){
 
 getUser()
 document.getElementById("number").addEventListener("input", getUser)
-document.getElementById("number").value = "";
+
 
 //Add Google maps API or pixel coordinates on a map 
 //Add a few inputs to add specific details which is added to a paragraph that slowly fills up.
